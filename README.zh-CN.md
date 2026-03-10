@@ -6,6 +6,9 @@
 
 <div align="center">
 
+<img src="assets/icon.png" width="128" alt="knowlyr-gym icon">
+<br/>
+
 <h1>knowlyr-gym</h1>
 
 <h3>Gymnasium 风格强化学习框架<br/>Gymnasium-Style Reinforcement Learning Framework<br/>面向 LLM Agent 训练</h3>
