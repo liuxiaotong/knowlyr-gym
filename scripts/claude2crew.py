@@ -37,9 +37,10 @@ def _load_character_map_from_api() -> dict[str, str]:
     import urllib.request
 
     api_url = os.environ.get("CREW_REMOTE_URL", "https://crew.knowlyr.com")
-    api_token = os.environ.get(
-        "CREW_API_TOKEN", "X52I08vGWptmvtZxCMzX500odojsdv30k-gEq0G4sp8"
-    )
+    api_token = os.environ.get("CREW_API_TOKEN")
+    if not api_token:
+        print("警告: 未设置 CREW_API_TOKEN 环境变量，跳过从 API 加载花名册", file=sys.stderr)
+        return {}
     try:
         req = urllib.request.Request(
             f"{api_url}/api/employees",
